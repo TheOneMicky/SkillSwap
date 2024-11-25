@@ -4,35 +4,62 @@ body {
     margin: 0;
     padding: 0;
     line-height: 1.6;
-    background-color: #f4f4f9;
+  
   }
   
-  header {
-    background: #333;
+  .navbar {
+    position: sticky; /* Makes the navbar stick to the top */
+    top: 0;
+    background-color: #333;
     color: #fff;
-    padding: 1em 0;
-    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
   }
-  
-  header h1 {
-    margin: 0;
-  }
-  
-  nav ul {
-    list-style: none;
-    padding: 0;
-  }
-  
-  nav ul li {
-    display: inline;
-    margin: 0 15px;
-  }
-  
-  nav ul li a {
-    color: #fff;
-    text-decoration: none;
-  }
-  
+/* Logo and title container */
+.logo-container {
+  display: flex;
+  align-items: center;
+}
+  /* Logo styles */
+.logo {
+  width: 50px;
+  height: 50px;
+  margin-right: 20px;
+}
+
+/* Title styles */
+.site-title {
+  font-size: 24px;
+  color: white;
+  margin: 0;
+}
+
+/* Navigation links */
+.nav-links {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li {
+  margin: 0 10px;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.nav-links a:hover {
+  text-decoration: underline;
+}
+
   section {
     padding: 20px;
     text-align: center;
@@ -64,12 +91,23 @@ body {
     padding: 10px 0;
   }
   
-  img {
-    max-width: 100%;
-    height: auto;
-    margin-top: 15px;
-  }
-  
+.about-image {
+  max-width: 30%; 
+  height: auto; 
+  display: block;
+  margin: 0 auto;
+  border-radius: 10px;
+}
+.testimonial-video {
+  max-width: 70%; /* Ensures the video doesn’t exceed the container width */
+  height: auto; /* Maintains the aspect ratio */
+  display: block; /* Prevents inline issues and centers video if the parent allows */
+  margin: 0 auto; /* Centers the video horizontally */
+  border: 2px solid #ccc; /* Optional: Adds a border for style */
+  border-radius: 8px; /* Optional: Adds rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Adds a shadow for a polished look */
+}
+
   /* Animation */
   .skill-card {
     animation: fadeIn 2s ease-in-out;
@@ -83,4 +121,171 @@ body {
       opacity: 1;
     }
   }
-  
+  /* For smaller devices (e.g., mobile) */
+@media screen and (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    .card {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    header {
+        text-align: center;
+    }
+}
+
+html {
+    scroll-behavior: smooth;
+}
+#openModal {
+  padding: 12px 30px;
+  background-color: #4CAF50; /* Fresh modern green */
+  color: white;
+  font-size: 18px;
+  border: none;
+  border-radius: 50px; /* Rounded corners */
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transition */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+  text-align: center;
+}
+
+#openModal:hover {
+  background-color: #45a049; /* Slightly darker green on hover */
+  transform: translateY(-2px); /* Hover effect with subtle lift */
+}
+
+#openModal:active {
+  background-color: #388e3c; /* Darker green on click */
+  transform: translateY(1px); /* Button appears pressed */
+}
+
+/* Style for the Contact Form */
+/* Style for the Contact Form */
+#contactForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+  background-color: #fff; /* White background for the form */
+  border-radius: 8px; /* Slight rounding of corners */
+  padding: 20px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1); /* Soft shadow for a floating effect */
+  width: 100%;
+  max-width: 500px; /* Limits the form width */
+}
+
+/* Style for input fields */
+#contactForm input {
+  padding: 12px 20px;
+  width: 100%;
+  max-width: 400px;
+  margin-bottom: 20px; /* More spacing between inputs */
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 16px;
+  background-color: #f9f9f9;
+  transition: border 0.3s ease, background-color 0.3s ease;
+}
+
+/* Focus effect for inputs */
+#contactForm input:focus {
+  border-color: #4CAF50; /* Green border on focus */
+  background-color: #e8f5e8; /* Slight background color change */
+  outline: none; /* Remove default focus outline */
+}
+
+/* Style for the submit button */
+#contactForm button {
+  padding: 12px 30px;
+  width: 100%;
+  max-width: 400px;
+  background-color: #4CAF50; /* Matching modern green */
+  color: white;
+  font-size: 18px;
+  border: none;
+  border-radius: 50px; /* Rounded corners */
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+#contactForm button:hover {
+  background-color: #45a049; /* Slightly darker green on hover */
+  transform: translateY(-2px); /* Lift effect */
+}
+
+#contactForm button:active {
+  background-color: #388e3c; /* Darker green on click */
+  transform: translateY(1px); /* Button pressed effect */
+}
+
+/* Style for the form labels */
+#contactForm label {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #333;
+  text-align: left;
+  width: 100%;
+  max-width: 400px;
+  margin-bottom: 6px;
+}
+
+/* Style for the modal background */
+#myModal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+/* Style for the modal content */
+.modal-content {
+  background-color: white;
+  margin: 15% auto;
+  padding: 20px;
+  width: 80%;
+  max-width: 500px;
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+    background-color: white;
+    margin: 15% auto;
+    padding: 20px;
+    width: 80%;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+

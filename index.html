@@ -5,12 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Skill Swap Platform</title>
   <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="assets/icon.png">
+  
+
 </head>
 <body>
-  <header>
-    <h1>Skill Swap Platform</h1>
-    <nav>
-      <ul>
+  <header class  ="navbar">
+    <div class="logo-container">
+      <img src="assets/icon.png" alt="Website Logo" class="logo">
+      <h1 class="site-title">Skill Swap Platform</h1>
+    </div>
+      <nav>
+      <ul class="nav-links">
         <li><a href="#about">About</a></li>
         <li><a href="#skills">Skills</a></li>
         <li><a href="#testimonials">Testimonials</a></li>
@@ -18,11 +25,11 @@
       </ul>
     </nav>
   </header>
-
+  <main>
   <section id="about">
     <h2>About Us</h2>
     <p>Welcome to the Skill Swap Platform! We connect people who want to learn new skills with others willing to teach.</p>
-    <img src="assets/skills.jpg" alt="Skill Swap Image">
+    <img src="assets/skills.jpg" alt="Skill Swap Image" class="about-image">
   </section>
 
   <section id="skills">
@@ -43,22 +50,44 @@
 
   <section id="testimonials">
     <h2>Testimonials</h2>
-    <video controls>
-      <source src="assets/testimonial.mp4" type="video/mp4">
+    <div class="video container">
+    <video controls autoplay muted loop class="testimonial-video">
+      <source src="assets/video.mp4" type="video/mp4">
       Your browser does not support the video tag.
     </video>
+    </div>
   </section>
 
   <section id="contact">
     <h2>Contact Us</h2>
-    <p>Email us at: <a href="mailto:info@skillswap.com">info@skillswap.com</a></p>
-    <p>Call us: +123-456-7890</p>
-  </section>
+    <p>Email us at: <a href="mailto:njagwamicky@gmail.com">njagwamicky@gmail.com</a></p>
+    <p>Call us: +254795834485</p>
+    
+    <!-- Button to Open the Modal -->
+    <button id="openModal">Contact Us</button>
+
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Contact Form</h2>
+            <form id="contactForm">
+                <input type="email" id="email" placeholder="Enter your email" required>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+</section>
+
+<video autoplay muted loop id="bg-video">
+    <source src="video.mp4" type="video/mp4">
+  </video>  
 
   <footer>
     <p>&copy; 2024 Skill Swap Platform. All rights reserved.</p>
   </footer>
 
   <script src="script.js"></script>
+  </main>
 </body>
 </html>
